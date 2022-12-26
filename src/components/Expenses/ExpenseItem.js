@@ -16,7 +16,7 @@ const ExpenseItem = (props) => {
   // const day = props.date.toLocaleString(locale, { day: "2-digit" });
   // Moved to ExpenseDate component
 
-  const [title, setTitle] = useState(props.title);
+  // const [title, setTitle] = useState(props.title);
   // AirBNB styling guide says to close over with arrow function
   // const clickHandler = () => {
   //   setTitle("**New Title**");
@@ -32,7 +32,7 @@ const ExpenseItem = (props) => {
         <h2>{title}</h2>
         <div className="expense-item__price">${props.amount}</div>
       </div>
-      <button onClick={() => setTitle("**New Title**")}>Change Title</button>
+      {/* <button onClick={() => setTitle("**New Title**")}>Change Title</button> */}
     </Card>
   );
 };
