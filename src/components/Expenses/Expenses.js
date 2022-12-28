@@ -24,7 +24,7 @@ const Expenses = function (props) {
             title={exp.title}
             amount={exp.amount}
             date={exp.date}
-            key={exp.key}
+            key={exp.id}
           />
         ))}
       </Card>
