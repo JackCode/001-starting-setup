@@ -26,14 +26,16 @@ const ExpenseItem = (props) => {
   //  Must return JSX with one root element (easiest to use div)
   //  Notice use of "className" instead of "class" in JSX
   return (
-    <Card className="expense-item">
-      <ExpenseDate date={props.date} />
-      <div className="expense-item__description">
-        <h2>{props.title}</h2>
-        <div className="expense-item__price">${props.amount}</div>
-      </div>
-      {/* <button onClick={() => setTitle("**New Title**")}>Change Title</button> */}
-    </Card>
+    <li>
+      <Card className="expense-item">
+        <ExpenseDate date={props.date} />
+        <div className="expense-item__description">
+          <h2>{props.title}</h2>
+          <div className="expense-item__price">${props.amount}</div>
+        </div>
+        {/* <button onClick={() => setTitle("**New Title**")}>Change Title</button> */}
+      </Card>
+    </li>
   );
 };
 
