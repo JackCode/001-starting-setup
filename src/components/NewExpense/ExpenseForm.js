@@ -1,11 +1,11 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 
-import "./ExpenseForm.css";
+import './ExpenseForm.css';
 
 const ExpenseForm = function (props) {
-  const [enteredTitle, setEnteredTitle] = useState("");
-  const [enteredAmount, setEnteredAmount] = useState("");
-  const [enteredDate, setEnteredDate] = useState("");
+  const [enteredTitle, setEnteredTitle] = useState('');
+  const [enteredAmount, setEnteredAmount] = useState('');
+  const [enteredDate, setEnteredDate] = useState('');
   // const [userInput, setUserInput] = useState({
   //   enteredTitle: "",
   //   enteredAmount: "",
@@ -38,21 +38,22 @@ const ExpenseForm = function (props) {
 
     const expenseData = {
       title: enteredTitle,
-      amount: enteredAmount,
+      amount: +enteredAmount,
       date: new Date(enteredDate),
     };
 
-    setEnteredTitle("");
-    setEnteredAmount("");
-    setEnteredDate("");
+    setEnteredTitle('');
+    setEnteredAmount('');
+    setEnteredDate('');
 
     props.onSaveExpenseData(expenseData);
+    props.hideFormHandler();
   };
 
   const resetHandler = function (event) {
-    setEnteredTitle("");
-    setEnteredAmount("");
-    setEnteredDate("");
+    setEnteredTitle('');
+    setEnteredAmount('');
+    setEnteredDate('');
   };
 
   return (
@@ -91,9 +92,7 @@ const ExpenseForm = function (props) {
         <button type="reset" onClick={props.hideFormHandler}>
           Cancel
         </button>
-        <button type="submit" onClick={props.hideFormHandler}>
-          Add Expense
-        </button>
+        <button type="submit">Add Expense</button>
       </div>
     </form>
   );
